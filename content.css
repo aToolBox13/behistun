@@ -1,0 +1,116 @@
+/* Behistun — content.css */
+
+/* LOADER */
+#behistun-ov {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999999;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.bh-loader {
+  background: rgba(28,28,30,0.96);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  padding: 30px 40px 26px;
+  text-align: center;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+}
+.bh-ring { width: 44px; height: 44px; margin: 0 auto 18px; animation: bhrot 1.3s linear infinite; }
+@keyframes bhrot { to { transform: rotate(360deg); } }
+.bh-loader-title {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.92);
+}
+.bh-loader-sub {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 4px;
+}
+
+/* RESTORE BUTTON */
+.behistun-restore {
+  position: fixed; top: 16px; right: 16px;
+  z-index: 999998;
+  background: #1EB53A;
+  border: none; border-radius: 20px;
+  padding: 8px 18px;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-size: 13px; font-weight: 600; color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(30,181,58,0.4);
+  transition: all 0.2s ease;
+}
+.behistun-restore:hover { background: #17A032; transform: translateY(-1px); }
+.behistun-restore:active { transform: scale(0.96); }
+
+/* BILINGUAL */
+.behistun-bi {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.4em 0 !important;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.bh-orig { padding: 9px 12px; background: #F5F5F7; font-size: 0.9em; color: #86868B; line-height: 1.65; border-right: 1px solid rgba(0,0,0,0.07); }
+.bh-tr   { padding: 9px 12px; background: #fff; line-height: 1.65; color: #1d1d1f; }
+.bh-badge {
+  display: inline-block;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-size: 8px; font-weight: 700; letter-spacing: 0.6px;
+  text-transform: uppercase; border-radius: 4px; padding: 1px 5px; margin-bottom: 6px;
+}
+.bh-en { background: #E5E5EA; color: #86868B; }
+.bh-tl { background: #E1F0FA; color: #0071E3; }
+
+/* VOCAB */
+.bh-word {
+  background: linear-gradient(to bottom, transparent 60%, rgba(52,199,89,0.2) 60%);
+  cursor: pointer; border-radius: 2px; transition: background 0.12s;
+}
+.bh-word:hover { background: rgba(52,199,89,0.15); border-radius: 3px; }
+
+/* TOOLTIP */
+.behistun-tip {
+  position: fixed; z-index: 1000000;
+  background: rgba(28,28,30,0.96);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.88);
+  border-radius: 12px; padding: 10px 14px; max-width: 210px;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-size: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  pointer-events: none; opacity: 0; transition: opacity 0.12s;
+  backdrop-filter: blur(20px);
+}
+.behistun-tip.show { opacity: 1; }
+.bh-tw { font-weight: 600; font-size: 13px; color: #34C759; margin-bottom: 3px; }
+.bh-td { color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+/* ERROR BANNER */
+.behistun-error {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 999998;
+  background: rgba(18,18,20,0.97);
+  border: 1px solid rgba(252,209,22,0.3);
+  border-radius: 16px; padding: 14px 16px;
+  display: flex; align-items: center; gap: 10px;
+  max-width: 400px; width: calc(100vw - 40px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  backdrop-filter: blur(20px);
+  animation: bhErr 0.3s cubic-bezier(0.25,0.8,0.25,1);
+}
+@keyframes bhErr { from { opacity:0; transform: translateX(-50%) translateY(-12px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
+.be-icon { flex-shrink: 0; }
+.be-msg {
+  flex: 1;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.45;
+}
+.be-close {
+  background: none; border: none; color: rgba(255,255,255,0.3);
+  font-size: 13px; cursor: pointer; transition: color 0.15s; flex-shrink: 0;
+}
+.be-close:hover { color: rgba(255,255,255,0.7); }
