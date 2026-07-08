@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Behistun — Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 680px; margin: 40px auto; padding: 0 24px; color: #1d1d1f; line-height: 1.6; }
+  h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+  h2 { font-size: 17px; font-weight: 600; margin: 28px 0 8px; }
+  p, li { font-size: 15px; color: #444; }
+  .date { color: #888; font-size: 13px; margin-bottom: 32px; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<div class="date">Effective date: July 2026</div>
+
+<h2>What Behistun does</h2>
+<p>Behistun is a Chrome extension that translates web pages using the Google Translate API. Text from the active tab is sent to a secure proxy server, which forwards it to Google Translate, and returns the translation to your browser.</p>
+
+<h2>What data we collect</h2>
+<p>We collect <strong>no personal data</strong>. Behistun does not:</p>
+<ul>
+  <li>Store any text you translate</li>
+  <li>Track which pages you visit</li>
+  <li>Collect your IP address or location</li>
+  <li>Require an account or login</li>
+  <li>Use cookies or local analytics</li>
+</ul>
+
+<h2>How translation works</h2>
+<p>Text from the page you are translating is sent to a Cloudflare Worker proxy, which calls the Google Translate API. The proxy does not log or store any translated content. Google's own privacy policy applies to text processed by their API: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+
+<h2>Permissions</h2>
+<p>Behistun requests the following Chrome permissions:</p>
+<ul>
+  <li><strong>activeTab</strong> — to read and modify the current tab's content for translation</li>
+  <li><strong>storage</strong> — to save your language and feature preferences locally</li>
+  <li><strong>scripting</strong> — to inject the translation script into the page</li>
+  <li><strong>contextMenus</strong> — to add a right-click "Translate with Behistun" option</li>
+</ul>
+
+<h2>Third-party services</h2>
+<p>Behistun uses Google Translate API for translation. Text you translate is subject to Google's Terms of Service and Privacy Policy.</p>
+
+<h2>Contact</h2>
+<p>For questions about this policy, please open an issue on the extension's GitHub repository.</p>
+</body>
+</html>
